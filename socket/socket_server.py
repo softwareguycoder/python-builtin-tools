@@ -30,7 +30,8 @@ def main():
             if not "HELO\n" in content:
                 sock_to_client.sendall("500 Internal server error.\n")
                 break
-           sock_to_client.sendall("201 OK. The world says hi.\n")
+            sock_to_client.sendall("201 OK. The world says hi.\n")
+        
    except:       
        print("ERROR: Socket communication error.")
    finally:   
