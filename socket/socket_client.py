@@ -19,14 +19,15 @@ def main():
         sock.connect(remote_address)
         print("C: <connected to server 127.0.0.1 on port 5000>")
         print("C: Hello, world!")
-        socket.sendall('Hello world!\n')
+        sock.sendall('Hello world!\n'.encode('utf-8'))
         # listen for the server's response, up to 100 bytes long
-        reply = sock.recv(100)
-        print("S: {}".format(reply))
-    except:
-        print("ERROR: Socket operation failed.")
+        reply = sock.recv(100).decode('utf-8')
+        print("S: {}".format(reply.replace('\n', '')))
+    except Exception as e:       
+       print("ERROR: Socket communication error. {}".format(e))
     finally:
         sock.close()
+        print("S: <disconnected>")
         
     
 if __name__=="__main__":
