@@ -19,7 +19,7 @@ def print_structured_data(val):
 # hex values that result after the pack operation    
 def main():
     a = [5,34,21,75,20]
-    val = struct.pack('5B', *a)s
+    val = struct.pack('5B', *a)
     print_structured_data(val)
     
     
