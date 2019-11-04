@@ -1,4 +1,5 @@
 from client import Client
+from unpickler import TheUnpickler
 
 
 SERVER_ADDRESS="127.0.0.1"
@@ -15,7 +16,12 @@ def main():
         print("ERROR: Did not receive anything from the server.")
         quit()
         
+    packed_data = TheUnpickler.unpickle(pickled_string)
+    if not packed_data:
+        print("ERROR: Did not receive anything from the server.")
+        quit()
     
+    # TODO: Add more code here
     pass
 
 
