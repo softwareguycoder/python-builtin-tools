@@ -9,6 +9,8 @@ def main():
     if (not client.connect()):
         print("ERROR: Failed to connect to server.\n")
         quit()
+        
+    pickled_stirng = client.receive()
     pass
 
 

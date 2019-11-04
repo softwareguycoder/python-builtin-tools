@@ -1,6 +1,8 @@
 import socket
 
 
+SOCK_RECV_BUFF_SIZE = 1024
+
 class Client(object):
     def __init__(self, address, port):
         self._address = address
@@ -23,5 +25,11 @@ class Client(object):
         
         return result
         
-        
+      
+    def receive(self):
+        if not self._sock:
+            return ""
+        return self._sock.rec(SOCK_RECV_BUFF_SIZE);
+
+    
     pass
