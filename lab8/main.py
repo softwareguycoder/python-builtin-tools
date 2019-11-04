@@ -10,7 +10,12 @@ def main():
         print("ERROR: Failed to connect to server.\n")
         quit()
         
-    pickled_stirng = client.receive()
+    pickled_string = client.receive()
+    if not pickled_string:
+        print("ERROR: Did not receive anything from the server.")
+        quit()
+        
+    
     pass
 
 
